@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    homepage = "<h1>浚承Python網頁1121</h1>"
+    homepage = "<h1>浚承Python網頁1127</h1>"
     homepage += "<a href=/mis>MIS</a><br>"
     homepage += "<a href=/today>顯示日期時間</a><br>"
     homepage += "<a href=/welcome?nick=林浚承>傳送使用者暱稱</a><br>"
@@ -124,7 +124,7 @@ def movie():
     title = item.find("div", class_="filmtitle").text
     movie_id = item.find("div", class_="filmtitle").find("a").get("href").replace("/", "").replace("movie", "")
     hyperlink = "http://www.atmovies.com.tw" + item.find("div", class_="filmtitle").find("a").get("href")
-    show = item.find("div", class_="runtime").text.replace("上映日期：", "")
+    show = x.find(class_="runtime").text.replace("上映日期：", "")
     show = show.replace("片長：", "")
     show = show.replace("分", "")
     showDate = show[0:10]
@@ -143,7 +143,7 @@ def movie():
     doc_ref = db.collection("電影").document(movie_id)
     doc_ref.set(doc)    
   return "近期上映電影已爬蟲及存檔完畢，網站最近更新日期為：" + lastUpdate 
- 
+
 
 if __name__ == "__main__":
     app.run(debug=True)
