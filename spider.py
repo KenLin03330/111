@@ -8,7 +8,7 @@ Data.encoding = "utf-8"
 #print(Data.text)
 
 sp = BeautifulSoup(Data.text, "html.parser")
-result=sp.select(".team-box")
+result=sp.select((".filmListAllX li")
 
 
 for x in result:
