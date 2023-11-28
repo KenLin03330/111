@@ -20,7 +20,7 @@ def index():
     homepage += "<a href=/mis>MIS</a><br>"
     homepage += "<a href=/today>顯示日期時間</a><br>"
     homepage += "<a href=/welcome?nick=tcyang>傳送使用者暱稱</a><br>"
-    homepage += "<a href=/about>陳君而簡介網頁</a><br>"
+    homepage += "<a href=/about>林浚承簡介網頁</a><br>"
     homepage += "<a href=/account>網頁表單輸入帳密傳值</a><br>"
     homepage += "<br><a href=/read>人選之人演員查詢</a><br>"
     homepage += "<br><a href=/books>圖文精選</a><br>"
