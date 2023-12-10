@@ -12,6 +12,7 @@ Data.encoding = "utf-8"
 
 #print(Data.text)
 
+
 sp = BeautifulSoup(Data.text, "html.parser")
 result=sp.select(".filmListAllX li")
 lastUpdate = sp.find("div", class_="smaller09").text[5:]
