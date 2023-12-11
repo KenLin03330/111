@@ -163,6 +163,7 @@ def searchQ():
                 info += "片名：" + doc.to_dict()["title"] + "<br>" 
                 info += "影片介紹：<a href=" + doc.to_dict()["hyperlink"] + ">" + doc.to_dict()["hyperlink"] + "</a><br>"
                 info += "片長：" + doc.to_dict()["showLength"] + " 分鐘<br>" 
+                info += "片級：" + doc.to_dict()["rate"] + " <br>"
                 info += "上映日期：" + doc.to_dict()["showDate"] + "<br><br>"           
         return info
     else:  
@@ -180,7 +181,7 @@ def webhook3():
         rate =  req.get("queryResult").get("parameters").get("rate")
         info = "我是林浚承開發的電影聊天機器人,您選擇的電影分級是：" + rate + " ，相關電影：\n"
         db = firestore.client()
-        collection_ref = db.collection("電影含分級")
+        collection_ref = db.collection("電影")
         docs = collection_ref.get()
         result = ""
         for doc in docs:
@@ -190,6 +191,7 @@ def webhook3():
                 result += "介紹：" + dict["hyperlink"] + "\n\n"
         info += result
     return make_response(jsonify({"fulfillmentText": info}))
+
 
 @app.route("/movie_rate")
 def movie_rate():
