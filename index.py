@@ -191,6 +191,7 @@ def webhook3():
         info += result
     return make_response(jsonify({"fulfillmentText": info}))
 
+
 @app.route("/movie_rate")
 def movie_rate():
     url = "http://www.atmovies.com.tw/movie/next/"
